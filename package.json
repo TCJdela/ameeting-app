@@ -10,6 +10,9 @@
     "dev:api": "node --loader ts-node/esm api/server.ts",
     "build:api": "tsc -p api/tsconfig.json"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

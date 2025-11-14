@@ -2,7 +2,13 @@
   "name": "ameeting-app2",
   "version": 2,
   "rewrites": [
-    { "source": "/api/:match*", "destination": "/api/:match*" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/api/:match*",
+      "destination": "/api/:match*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/dist/index.html"
+    }
   ]
 }
