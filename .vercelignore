@@ -1,9 +1,9 @@
-src/
-api/
-supabase/
-package.json
-package-lock.json
-vite.config.ts
-tsconfig.json
 node_modules/
 .vercel/
+.git/
+dist/
+.history/
+temp/
+*.log
+.env
+.env.*
