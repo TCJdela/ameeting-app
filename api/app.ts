@@ -15,7 +15,7 @@ import authRoutes from './routes/auth.js'
 import transcribeRoutes from './transcribe.js'
 import meetingRoutes from './meeting.js'
 import exportRoutes from './export.js'
-import adminRoutes from './admin.js'
+import adminRoutes from './routes/admin.js'
 import audioRoutes from './audio.js'
 
 // for esm mode

@@ -1,6 +1,6 @@
 import express from 'express'
 import crypto from 'crypto'
-import { supabase } from './lib/supabase.js'
+import { supabase } from '../lib/supabase.js'
 
 const router = express.Router()
 
@@ -53,7 +53,6 @@ async function initHandler(req: express.Request, res: express.Response) {
 }
 
 router.post('/init', initHandler)
-// 方便排障：GET 也允许触发初始化（需 x-admin-token）
 router.get('/init', initHandler)
 
 export default router
