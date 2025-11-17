@@ -168,17 +168,17 @@ function RecordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-sky-50">
+      <div className="container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-xl p-8 border border-slate-100">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center tracking-tight">
               实时录音
             </h2>
 
             <div className="text-center">
-              <div className={`rounded-full w-32 h-32 flex items-center justify-center mx-auto mb-8 ${
-                isRecording ? 'bg-red-100 animate-pulse' : 'bg-blue-100'
+              <div className={`rounded-full w-32 h-32 flex items-center justify-center mx-auto mb-8 ring-8 ${
+                isRecording ? 'bg-red-100 ring-red-50 animate-pulse' : 'bg-blue-100 ring-blue-50'
               }`}>
                 <Mic className={`w-16 h-16 ${
                   isRecording ? 'text-red-600' : 'text-blue-600'
@@ -189,7 +189,7 @@ function RecordPage() {
                 {!isRecording && !audioBlob && (
                   <button
                     onClick={startRecording}
-                    className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
+                    className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 active:scale-95 transition-all shadow"
                   >
                     开始录音
                   </button>
@@ -198,7 +198,7 @@ function RecordPage() {
                 {isRecording && (
                   <button
                     onClick={stopRecording}
-                    className="bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors"
+                    className="bg-red-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-red-700 active:scale-95 transition-all shadow"
                   >
                     停止录音
                   </button>
@@ -206,12 +206,12 @@ function RecordPage() {
 
                 {audioBlob && !isProcessing && (
                   <div className="space-y-4">
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <div className="bg-green-50 border border-green-200 rounded-xl p-4">
                       <p className="text-green-800">录音已完成，准备上传</p>
                     </div>
                     <button
                       onClick={uploadAudio}
-                      className="bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors"
+                      className="bg-green-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-green-700 active:scale-95 transition-all shadow"
                     >
                       上传并转写
                     </button>
@@ -220,7 +220,7 @@ function RecordPage() {
 
                 {isProcessing && (
                   <div className="text-center">
-                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-blue-200 border-b-blue-600"></div>
                     <p className="mt-4 text-gray-600">正在处理中...</p>
                   </div>
                 )}

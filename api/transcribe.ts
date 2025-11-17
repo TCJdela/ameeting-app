@@ -97,7 +97,7 @@ router.post('/start', async (req, res) => {
 });
 
 // 处理转写任务
-async function processTranscription(audioFile: any, transcriptId: string) {
+export async function processTranscription(audioFile: any, transcriptId: string) {
   try {
     console.log('开始处理转写任务:', transcriptId);
 
